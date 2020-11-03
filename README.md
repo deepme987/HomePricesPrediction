@@ -2,6 +2,8 @@
 
 ***Click [here](https://homepricesprediction.herokuapp.com/) to check live demo.***
 
+!["Home Page"]("Index Page.png" "Home Page")
+
 Home Prices Prediction is a simple tool to estimate housing prices for buying or renting a house at a particular location.
 
 As of now, the model takes into consideration the following aspects:
