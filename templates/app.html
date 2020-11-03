@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Home Price Prediction</title>
+
+    <!-- FavIcon config -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../static/favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="../static/favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="../static/favicon/favicon-16x16.png">
+	<link rel="manifest" href="../static/favicon/site.webmanifest">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="theme-color" content="#ffffff">
+    <link rel="shortcut icon" type="image/x-icon" href="../static/favicon/favicon.ico" />
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='app.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="{{url_for('static', filename='app.js')}}"></script>
+    <script src="{{url_for('static', filename='app.js')}}"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+            integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <!-- <script src="app.js"></script>
+	<link rel="stylesheet" href="app.css"> -->
+</head>
+
+<body class="bg-light text-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Housing Price Prediction</a>
+    </nav>
+
+    <div class="row mt-5 w-100">
+        <div class="container my-auto">
+            <form class="form text-center col-lg-8">
+                <div class="form-group">
+                    <h4>Kindly fill the values to estimate price</h4>
+                </div>
+
+                <div class="form-group col-lg-6 offset-3 mt-5">
+                    <label for="uiSqft">Area (Square Feet)</label>
+                    <input class="area form-control floatLabel" type="email" id="uiSqft" name="Squareft" value="1000">
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-lg-6">
+                        <label for="switch-field">BHK</label>
+                        <div class="switch-field d-flex justify-content-center" id="switch-field">
+                            <input type="radio" id="radio-bhk-1" name="uiBHK" value="1" />
+                            <label for="radio-bhk-1">1</label>
+                            <input type="radio" id="radio-bhk-2" name="uiBHK" value="2" checked/>
+                            <label for="radio-bhk-2">2</label>
+                            <input type="radio" id="radio-bhk-3" name="uiBHK" value="3" />
+                            <label for="radio-bhk-3">3</label>
+                            <input type="radio" id="radio-bhk-4" name="uiBHK" value="4" />
+                            <label for="radio-bhk-4">4</label>
+                            <input type="radio" id="radio-bhk-5" name="uiBHK" value="5" />
+                            <label for="radio-bhk-5">5</label>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <label for="bath-field">Bath</label>
+                        <div class="switch-field d-flex justify-content-center" id="bath-field">
+                            <input type="radio" id="radio-bath-1" name="uiBathrooms" value="1" />
+                            <label for="radio-bath-1">1</label>
+                            <input type="radio" id="radio-bath-2" name="uiBathrooms" value="2" checked/>
+                            <label for="radio-bath-2">2</label>
+                            <input type="radio" id="radio-bath-3" name="uiBathrooms" value="3" />
+                            <label for="radio-bath-3">3</label>
+                            <input type="radio" id="radio-bath-4" name="uiBathrooms" value="4" />
+                            <label for="radio-bath-4">4</label>
+                            <input type="radio" id="radio-bath-5" name="uiBathrooms" value="5" />
+                            <label for="radio-bath-5">5</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-lg-6">
+                        <label for="city-select">City</label>
+                        <select class="location form-control" name="" id="city-select">
+                            <option value="" disabled="disabled" selected="selected">Select City</option>
+                            <option>Banglore</option>
+                            <option>Mumbai</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-6">
+                        <label for="uiLocations">Location</label>
+                        <select class="location form-control" name="" id="uiLocations" disabled="">
+                                <option value="" disabled="disabled" selected="selected">Select a City</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-lg-6">
+                        <label for="buy-price">Buy Price</label>
+                        <input type="text" id="buy-price" class="form-control" disabled>
+                    </div>
+                    <div class="col-lg-6">
+                        <label for="rent-price">Rent Price</label>
+                        <input type="text" id="rent-price" class="form-control" disabled>
+                    </div>
+                </div>
+
+                <div class="form-group d-flex justify-content-center col-lg-6 offset-3 mt-5">
+                    <button class="btn btn-success col-lg-8" onclick="onClickedEstimatePrice()" type="button">Estimate Price</button>
+                </div>
+
+                <div class="mt-5">
+                    <p><b>Note:</b> The prices are to provide a rough estimate. Final prices may vary on various factors.</p>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
